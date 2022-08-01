@@ -129,7 +129,7 @@ let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", handleSubmit);
 
 // search by current position
-function showCurrentPosition(position) {
+function displayCurrentPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "f895708dca633c4ff1e44d122433949c";
@@ -137,7 +137,7 @@ function showCurrentPosition(position) {
   axios.get(`${apiUrl}&${apiKey}`).then(displayTemperature);
 }
 function getCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(showCurrentPosition);
+  navigator.geolocation.getCurrentPosition(displayCurrentPosition);
 }
 let buttonCurrentPosition = document.querySelector("#current-location-button");
 buttonCurrentPosition.addEventListener("click", getCurrentPosition);
